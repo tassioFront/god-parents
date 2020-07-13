@@ -10,3 +10,51 @@
 .god-parents .message {
     max-width: 500px;
 }
+
+.god-parents-context {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-bottom: 20px;
+}
+
+
+
+
+.page {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    left: 15px;
+    right: 15px;
+}
+
+.fade-enter {
+    opacity: 0.01;
+  }
+
+  .fade-enter.fade-enter-active {
+    opacity: 1;
+    transition: opacity 300ms ease-in;
+  }
+
+  .fade-exit {
+    opacity: 1;
+  }
+
+  .fade-exit.fade-exit-active {
+    opacity: 0.01;
+    transition: opacity 300ms ease-in;
+  }
+
+  .transition-group {
+    position: relative;
+  }
+
+  /* section.route-section {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  } */

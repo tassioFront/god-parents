@@ -1,0 +1,13 @@
+.options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 500px;
+}
+
+.options .btn {
+    margin: 5px;
+    text-transform: none;
+    padding: 0 20px ;
+}

@@ -1,8 +1,10 @@
 import React from "react";
 import './footer.css'
+// import Popup from '../popup/Popup.js'
+
 const Home = () => (
-  <footer class="footer">
-    <p>Made with ❤️ by Tássio and Tamires</p>
+  <footer className="footer">
+    <p aria-label="hidden">Made with <span role="img">❤️</span> by Tássio and Tamires</p>
   </footer>
 );
 

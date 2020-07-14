@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import { Input } from 'react-materialize';
 import './password.css'
 
-import Popup from '../../../components/popup/Popup.js'
-
 const Password = ({ chosed = null }) => {
     // useEffect(() => {
     // }, []);
@@ -26,3 +24,4 @@ export default Password
         // passPlace && passPlace.scrollIntoView({
         //     behavior: 'smooth',
         // })
+

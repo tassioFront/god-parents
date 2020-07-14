@@ -1,26 +1,25 @@
 import React from "react";
 import { withRouter, } from 'react-router-dom'
+import { Input, Button } from 'react-materialize';
+
 // import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import '../god-parents.css'
+import './invite.css'
+import storage from '../../../helpers/localStorage'
 
 const Invite = ({ history, chosed }) => {
-    console.log("Invite -> chosed", chosed.name)
-    console.log("GodParents -> history", history)
-    // const [{ currentStep, chosed }, setState] = useState({
-    //     currentStep: 0,
-    //     chosed: null
-    // })
+    const hasChosed = storage.get('gp') || chosed
 
-    return (<div className="god-parents" >
-        <h2>{chosed.name}</h2>
-        <div className="god-parents-context">
-            <p className="message">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    return (<div className="invite" >
+        <h2>{hasChosed.name}</h2>
+        {hasChosed.message.map((row, index) => (
+            <p key={index} className={`${row.style || 'near'} message`}>{row.text}</p>
+        ))}
+        <div className="response">
+            <Button>Eu aceito!! ❤️❤️</Button>
+            <p>Desculpe pessoal, não posso :/</p>
         </div>
+
     </div >
     )
 }

@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom'
 import { Input, Button } from 'react-materialize';
 
 import './popup.css'
+import storage from '../../../helpers/localStorage'
 
 const Popup = ({ chosed, validatePass, handle, history }) => {
     console.log("Popup -> history", history)
@@ -13,7 +14,10 @@ const Popup = ({ chosed, validatePass, handle, history }) => {
     }
     const clean = true
     const goToInvite = () => {
-        validatePass(pass, chosed.myPass) && history.push('/invite/' + chosed.name)
+        if (!validatePass(pass, chosed.myPass)) return
+
+        history.push('/invite/' + chosed.name)
+        storage.set('gp', chosed)
     }
 
     return (<div className="popup" onClick={() => handle(chosed, clean)}>

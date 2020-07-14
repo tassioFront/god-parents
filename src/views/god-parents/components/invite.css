@@ -1,0 +1,43 @@
+.invite {
+    height: 100%;
+    width: 100%;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+.invite h2 {
+    margin-bottom: 20px;
+}
+
+.invite .message {
+    font-size: 18px;
+}
+
+.response {
+    width: 100%;
+    /* display: flex; */
+    font-family: Roboto, sans-serif;
+    margin: 20px 0;
+}
+
+.response .btn {
+    margin-bottom: 20px;
+}
+
+
+.contrast {
+    margin: 20px 0;
+}
+
+.medium {
+    margin: 15px 0;
+}
+
+.near {
+    margin: 10px 0;
+}
+
+.too-near {
+    margin: 10px 0;
+}

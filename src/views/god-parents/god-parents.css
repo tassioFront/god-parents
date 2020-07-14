@@ -5,6 +5,8 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 550px;
+    margin: auto;
 }
 
 .god-parents .message {
@@ -17,9 +19,17 @@
   flex-direction: column;
   justify-content: space-around;
   padding-bottom: 20px;
+  padding-top: 15px;
+  align-items: center;
 }
 
-
+.god-parents-context blockquote  {
+  margin-bottom: 20px;
+}
+.god-parents-context cite  {
+  float: right;
+  margin-right: 10px;
+}
 
 
 .page {

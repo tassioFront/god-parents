@@ -12,13 +12,14 @@
 
 .invite .message {
     font-size: 18px;
+    max-width: 550px;
+    margin: 0 auto;
 }
 
 .response {
     width: 100%;
-    /* display: flex; */
     font-family: Roboto, sans-serif;
-    margin: 20px 0;
+    margin: 45px 0;
 }
 
 .response .btn {

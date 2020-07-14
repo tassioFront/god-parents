@@ -18,6 +18,7 @@ const Invite = ({ history, chosed }) => {
         <div className="response">
             <Button>Eu aceito!! ❤️❤️</Button>
             <p>Desculpe pessoal, não posso :/</p>
+            {/* <p>PS: Não se preocupe se não puder aceitar, entenderemos ;)</p> */}
         </div>
 
     </div >

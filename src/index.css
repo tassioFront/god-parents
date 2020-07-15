@@ -74,19 +74,24 @@ select {
   }
 }
 
-.container {
+.container-god-parants {
   width: 100%;
   max-width: 1440px;
   /* height: 100vh; */
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: hidden;
+  /* overflow-x: hidden;
+  overflow-y: auto; */
   padding: 0 10px;
+}
+
+.row {
+  width: 100%;
 }
 
 .main {
   height: 100%;
-  overflow-y: auto;
   overflow-x: hidden;
+  overflow-y: auto;
 }

@@ -6,7 +6,7 @@ import Main from './router/main'
 class App extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container-god-parants">
         <Header />
         <Main />
         <Footer />

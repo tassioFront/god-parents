@@ -1,6 +1,6 @@
-import React, { Component, setState, useState } from "react";
-import { Switch, Route, withRouter, Link, } from 'react-router-dom'
-import { TransitionGroup, CSSTransition } from "react-transition-group";
+import React, { useState } from "react";
+import { Switch, Route, } from 'react-router-dom'
+// import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import Popup from './components/Popup.js'
 import Options from './components/Options'
@@ -10,10 +10,8 @@ import './god-parents.css'
 
 const GodParents = ({ history }) => {
     const GodParentsOptions = messages
-    const [{ currentStep, chosed, isValid }, setState] = useState({
-        currentStep: 0,
+    const [{ chosed }, setState] = useState({
         chosed: null,
-        isValid: ''
     })
     const validatePass = (inputed, pass) => {
         return pass === inputed

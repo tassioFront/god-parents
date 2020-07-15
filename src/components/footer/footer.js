@@ -4,7 +4,7 @@ import './footer.css'
 
 const Home = () => (
   <footer className="footer">
-    <p aria-label="hidden">Made with <span role="img">❤️</span> by Tássio and Tamires</p>
+    <p >Made with <span role="img" aria-label="hidden">❤️</span> by Tássio and Tamires</p>
   </footer>
 );
 

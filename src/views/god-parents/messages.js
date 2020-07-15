@@ -27,7 +27,7 @@ export const messages = [
     {
         name: 'Eu sou o Huill', color: godfather, myPass: 'eusouhuill', message: [
             { style: 'contrast', text: "Evoluiu, ritmo agressivo, 150 fluiu\nLevando levadas que você nunca ouviu\nEu sou o Huill hahaha" },
-            { text: "Taí um amigo pra todo momento. Um cara que tá sempre presente e que valoriza o que realmente importa.\n O tipo de amigo que queremos levar pra vida toda. E uma coisa é certa, tendo café, é certeza de Eu sou Huill hahaha\n É um privilégio ter um amigo tão importante assim conosco.\n E, por isso que nesse momento tão importante de nossas vidas, gostariamos de lhe convidar  para uma importante missão:\ Ser nosso padrinho de casamento." },
+            { text: "Taí um amigo pra todo momento. Um cara que tá sempre presente e que valoriza o que realmente importa.\n O tipo de amigo que queremos levar pra vida toda. E uma coisa é certa, tendo café, é certeza de Eu sou Huill hahaha\n É um privilégio ter um amigo tão importante assim conosco.\n E, por isso que nesse momento tão importante de nossas vidas, gostariamos de lhe convidar  para uma importante missão:\n Ser nosso padrinho de casamento." },
         ]
     },
     { name: 'Bruno', color: godfather },

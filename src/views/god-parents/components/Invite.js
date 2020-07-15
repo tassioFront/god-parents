@@ -1,6 +1,6 @@
 import React from "react";
 import { withRouter, } from 'react-router-dom'
-import { Input, Button } from 'react-materialize';
+import { Button } from 'react-materialize';
 
 // import { TransitionGroup, CSSTransition } from "react-transition-group";
 
@@ -16,7 +16,7 @@ const Invite = ({ history, chosed }) => {
             <p key={index} className={`${row.style || 'near'} message`}>{row.text}</p>
         ))}
         <div className="response">
-            <Button>Eu aceito!! ❤️❤️</Button>
+            <Button>Eu aceito!! <span role="img" aria-label="hidden">❤️❤️</span></Button>
             <p>Desculpe pessoal, não posso :/</p>
             {/* <p>PS: Não se preocupe se não puder aceitar, entenderemos ;)</p> */}
         </div>

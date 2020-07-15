@@ -1,4 +1,4 @@
-import React, { useState, setState } from "react";
+import React, { useState } from "react";
 import { withRouter } from 'react-router-dom'
 import { Input, Button } from 'react-materialize';
 

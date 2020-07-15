@@ -1,6 +1,5 @@
 import React from "react";
 import './footer.css'
-// import Popup from '../popup/Popup.js'
 
 const Home = () => (
   <footer className="footer">

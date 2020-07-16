@@ -48,7 +48,7 @@ export const messages = [
     },
     {
         name: 'Rafa <3', color: godfather, myPass: 'organica', message: [
-            { text: 'Ô meu irmão camarada! O irmão que mais amo! hahahaha\n Maninho, sei bem que temos nossas diferenças, mas quero que saiba que te admiro demais e tenho muito orgulho de ser seu Irmão. Você tem um coração enorme e sempre está disposto a ajudar, mesmo sem nada em troca\n. Espero que mesmo quando não morarmos mais juntos, estejamos próximos um do outro. Pra assistirmos os jogos do nosso pobre Arsenal hahahah Irmão, dada toda essa importância, gostaríamos de te convidar para a missão padrinho. Aceita?' }
+            { text: 'Eeee Rafinha, meu amigo! ❤️ Cara, você é uma pessoa incrível! Seu coração vale ouro, irmão. A gente passou muito tempo junto e na faculdade eu não poderia ter feito amizade melhor. Você foi meu parceiro em todo momento e a gente aprendeu muito juntos. Sinto saudades dos nossos cafés, de bater o olho 👀 hahahahaha \n Cara, eu valorizo muito sua amizade e torço muito pelo seu sucesso. Você merece e muito! Continuo sendo esse cara gentil que é e corra atrás dos seus sonhos, pessoas que merecerem, como você, sempre são recompensadas. E meu amigo, tá mais que claro o quanto você é importante pra mim - pra nós! E, nesse momento que estamos vivendo, - tão importante - queremos alguém importante assim simbolizando nossa união. Por isso, gostaríamos de lhe convidar para ser nosso padrinho de casamento.\n Aceita essa missão ?' }
         ]
     },
 ]

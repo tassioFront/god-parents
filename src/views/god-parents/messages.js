@@ -41,7 +41,9 @@ export const messages = [
     },
     {
         name: 'Bruno (cabeça)', color: godfather, myPass: 'chupeta', message: [
-            { text: 'Ô meu irmão camarada! O irmão que mais amo! hahahaha\n Maninho, sei bem que temos nossas diferenças, mas quero que saiba que te admiro demais e tenho muito orgulho de ser seu Irmão. Você tem um coração enorme e sempre está disposto a ajudar, mesmo sem nada em troca\n. Espero que mesmo quando não morarmos mais juntos, estejamos próximos um do outro. Pra assistirmos os jogos do nosso pobre Arsenal hahahah Irmão, dada toda essa importância, gostaríamos de te convidar para a missão padrinho. Aceita?' }
+            { style: 'contrast', text: 'É mano, ainda bem que continuo ao lado do único home que, um dia, dividiu a rosquinha comigo hahahaha' },
+            { text: 'Irmão, você sabe muito bem o quanto te admiro e o quanto sua amizade é importante pra mim. Você é aquele tipo de pessoa que mesmo tendo um dia péssimo, eu posso contar que virá me ajudar com o coração aberto. A gente aprendeu muita coisa juntos. E, nunca vou esquecer do quanto insistiu pra eu entrar na ETEC porque você sabia o quanto entrar lá mudaria a minha vida.  E mudou! ' },
+            { text: 'Saiba que torço muito por você. Você não imagina como fiquei feliz quando disse que tinha entrado na Inmetrics, tão feliz quanto fiquei quando entrei na Cyber e agora na Juntos. E agora ao lado da pessoa que tanto amo, que escolhi ser minha parceira de vida, é muito importante pra nós ter alguém tão importante simbolizando nossa união. E é por isso que te convocamos para a missão: padrinho!!\n E cara, vira Dev LOGOO!!! hahaha' }
         ]
     },
     {

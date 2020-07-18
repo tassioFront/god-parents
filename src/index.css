@@ -105,6 +105,14 @@ strong {
 }
 
 @media print {
+  html,
+  body {
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+  }
+
   .no-print {
     display: none;
   }

@@ -43,7 +43,7 @@ const Invite = ({ history, chosed }) => {
     <div id="invited" className="invite">
       <Button
         onClick={() => window.print()}
-        className="btn-floating btn-floating--custom btn-small waves-effect waves-light orange lighten-1 no-print"
+        className="btn-floating btn-floating--custom btn-large waves-effect waves-light orange lighten-1 no-print"
       >
         <i className="material-icons">print</i>
       </Button>
@@ -78,7 +78,7 @@ const Invite = ({ history, chosed }) => {
             style={{ maxWidth: "476px" }}
             src="https://i.pinimg.com/originals/00/ed/7e/00ed7ea3401fe1605ecaffeca76dc7ec.gif"
           />
-          <h4>Obrigado por aceitaaaaar !!!!</h4>
+          <h4>Obrigado por aceitaar !!!!</h4>
         </div>
       )}
       {hasChosed.hasAccepted === false && (

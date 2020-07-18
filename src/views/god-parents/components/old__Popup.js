@@ -15,7 +15,7 @@ const Popup = ({ chosed, validatePass, handle, history }) => {
   const goToInvite = () => {
     if (!validatePass(pass, chosed.myPass)) return;
 
-    history.push("/invite/" + chosed.name);
+    history.push("/invite/" + chosed.url);
     storage.set("gp", chosed);
   };
 

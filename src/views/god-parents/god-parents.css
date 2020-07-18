@@ -1,16 +1,16 @@
 .god-parents {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    max-width: 550px;
-    margin: auto;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 550px;
+  margin: auto;
 }
 
 .god-parents .message {
-    max-width: 500px;
+  max-width: 500px;
 }
 
 .god-parents-context {
@@ -23,41 +23,40 @@
   align-items: center;
 }
 
-.god-parents-context blockquote  {
+.god-parents-context blockquote {
   margin-bottom: 20px;
 }
-.god-parents-context cite  {
+.god-parents-context cite {
   float: right;
   margin-right: 10px;
 }
 
-
 .page {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    left: 15px;
-    right: 15px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 15px;
+  right: 15px;
 }
 
 .fade-enter {
-    opacity: 0.01;
-  }
+  opacity: 0.01;
+}
 
-  .fade-enter.fade-enter-active {
-    opacity: 1;
-    transition: opacity 300ms ease-in;
-  }
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 300ms ease-in;
+}
 
-  .fade-exit {
-    opacity: 1;
-  }
+.fade-exit {
+  opacity: 1;
+}
 
-  .fade-exit.fade-exit-active {
-    opacity: 0.01;
-    transition: opacity 300ms ease-in;
-  }
+.fade-exit.fade-exit-active {
+  opacity: 0.01;
+  transition: opacity 300ms ease-in;
+}
 
-  .transition-group {
-    position: relative;
-  }
+.transition-group {
+  position: relative;
+}

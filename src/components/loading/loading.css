@@ -1,0 +1,30 @@
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(90deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  75% {
+    transform: rotate(270deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.spinner {
+  margin: 25% auto;
+  width: 80px;
+  height: 80px;
+  border-color: #00bcd4 rgba(226, 218, 218, 0.1) rgba(226, 218, 218, 0.1);
+  border-width: 5px;
+  border-style: solid;
+  border-radius: 50%;
+  height: 36px;
+  width: 36px;
+  animation: spinner 0.5s infinite linear;
+}

@@ -19,7 +19,7 @@ const Options = ({
               waves="light"
               onClick={() => handle(option)}
               className={option.color}
-              key={option.id}
+              key={option.name}
             >
               {option.name}
             </Button>

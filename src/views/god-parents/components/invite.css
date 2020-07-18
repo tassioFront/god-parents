@@ -1,49 +1,65 @@
 .invite {
-    height: 100%;
-    width: 100%;
-    font-family: 'Dancing Script', cursive;
-    text-align: center;
-    white-space: pre-wrap;
+  height: 100%;
+  width: 100%;
+  font-family: "Dancing Script", cursive;
+  text-align: center;
+  white-space: pre-wrap;
 }
 
 .invite h2 {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.invite h6 {
+  margin-top: 25px;
 }
 
 .invite .message {
-    font-size: 18px;
-    max-width: 550px;
-    margin-right: auto;
-    margin-left: auto;
+  font-size: 18px;
+  max-width: 550px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 .response {
-    width: 100%;
-    font-family: Roboto, sans-serif;
-    margin: 45px 0;
+  width: 100%;
+  font-family: Roboto, sans-serif;
+  margin: 45px 0;
 }
 
 .response .btn {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
+.celebrate {
+  margin: 20px auto;
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.celebrate img {
+  margin-bottom: 10px;
+}
+
+/* text variants */
 .contrast {
-    margin-top:  20px;
-    margin-bottom:  20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 .medium {
-    margin-top:  15px;
-    margin-bottom:  15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .near {
-    margin-top:  10px;
-    margin-bottom:  10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .too-near {
-    margin-top:  50px;
-    margin-bottom:  50px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

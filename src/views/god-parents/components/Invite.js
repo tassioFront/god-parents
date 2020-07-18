@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { withRouter } from "react-router-dom";
 import { Button } from "react-materialize";
 
 import "./invite.css";
+import "./popup.css";
 import storage from "../../../helpers/localStorage";
+import { update } from "../../../services/godParents.service";
 
 const Invite = ({ history, chosed }) => {
-  const hasChosed = storage.get("gp") || chosed;
+  const [{ hasChosed }, setState] = useState({
+    hasChosed: storage.get("gp") || chosed,
+  });
+
   const toTitle = () => {
     const invited = document.querySelector("#invited");
     invited &&
@@ -14,7 +19,21 @@ const Invite = ({ history, chosed }) => {
         behavior: "smooth",
       });
   };
+  const sendResponse = async (value) => {
+    hasChosed.hasAccepted = value;
+    await update({ data: hasChosed, id: hasChosed.id });
+    setState({ hasChosed: { ...hasChosed } });
+    storage.set("gp", hasChosed);
+  };
+  const reset = () => {
+    hasChosed.hasAccepted = null;
+    setState({ hasChosed: { ...hasChosed } });
+    storage.set("gp", hasChosed);
+  };
+
   useEffect(() => {
+    setState({ hasChosed: storage.get("gp") || chosed });
+
     setTimeout(() => {
       toTitle();
     }, 100);
@@ -28,16 +47,42 @@ const Invite = ({ history, chosed }) => {
           {row.text}
         </p>
       ))}
-      <div className="response">
-        <Button>
-          Eu aceito!!{" "}
-          <span role="img" aria-label="hidden">
-            ❤️❤️
-          </span>
-        </Button>
-        <p>Desculpe pessoal, não posso :/</p>
-        {/* <p>PS: Não se preocupe se não puder aceitar, entenderemos ;)</p> */}
-      </div>
+      {hasChosed.hasAccepted === null && (
+        <div className="response">
+          <Button onClick={() => sendResponse(true)}>
+            Eu aceito!!{" "}
+            <span role="img" aria-label="hidden">
+              ❤️❤️
+            </span>
+          </Button>
+          <p
+            style={{ color: "#26a69a" }}
+            role="button"
+            onClick={() => sendResponse(false)}
+          >
+            Desculpe pessoal, não posso :/
+          </p>
+        </div>
+      )}
+      {hasChosed.hasAccepted && (
+        <div className="celebrate">
+          <img
+            alt="Fogos de artificio para comemorar!!!"
+            style={{ maxWidth: "476px" }}
+            src="https://i.pinimg.com/originals/00/ed/7e/00ed7ea3401fe1605ecaffeca76dc7ec.gif"
+          />
+          <h4>Obrigado por aceitaaaaar !!!!</h4>
+        </div>
+      )}
+      {hasChosed.hasAccepted === false && (
+        <h6
+          style={{ fontFamily: "Roboto", color: "#26a69a" }}
+          role="button"
+          onClick={() => reset()}
+        >
+          Clique aqui, caso queira <strong>responder novamente :)</strong>
+        </h6>
+      )}
     </div>
   );
 };

@@ -9,6 +9,19 @@ import Loading from "../../components/loading/loading.js";
 import "./god-parents.css";
 import { get } from "../../services/godParents.service";
 
+// const data = {
+//   color: "purple darken-1",
+//   isDouble: true,
+//   name: "Lucas e Amandinha",
+//   position: "2",
+//   message: [
+//     {
+//       text:
+//         "Ro, quando eu (Tássio) entrei na Sense e convivemos tão proximamente, pude perceber a pessoa incrível que é. Os seus valores, seus princípios e o seu bom humor. Perdi as contas de quantas vezes você dedicou seu valioso tempo para me dar conselhos de um amigo e, em certos momentos, conselhos de um pai! E mais que isso, como digo a outras pessoas quando falo de você: que é do tipo de pessoa que ensina, no dia a dia, dando exemplo. ",
+//     }
+//   ],
+// };
+
 const GodParents = () => {
   const [GodParentsOptions, setData] = useState([]);
   useEffect(() => {
@@ -22,7 +35,7 @@ const GodParents = () => {
   });
 
   const validatePass = (inputed, pass) => {
-    return inputed === pass || inputed === "porquinha";
+    return inputed === pass || inputed === process.env.REACT_APP_JOKE_PASSWORD;
   };
   const handled = (selected, isToClean) => {
     setState({ chosed: !isToClean ? selected : null });

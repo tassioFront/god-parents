@@ -12,16 +12,19 @@ const Options = ({
   const decreasing = (current, compare) => current.position - compare.position;
   return (
     <div className="options">
-      {optionsArray.sort(decreasing).map((option) => (
-        <Button
-          waves="light"
-          onClick={() => handle(option)}
-          className={option.color}
-          key={option.name}
-        >
-          {option.name}
-        </Button>
-      ))}
+      {optionsArray.sort(decreasing).map(
+        (option) =>
+          option.name && (
+            <Button
+              waves="light"
+              onClick={() => handle(option)}
+              className={option.color}
+              key={option.id}
+            >
+              {option.name}
+            </Button>
+          )
+      )}
     </div>
   );
 };

@@ -41,6 +41,12 @@ const Invite = ({ history, chosed }) => {
 
   return (
     <div id="invited" className="invite">
+      <Button
+        onClick={() => window.print()}
+        className="btn-floating btn-floating--custom btn-small waves-effect waves-light orange lighten-1 no-print"
+      >
+        <i className="material-icons">print</i>
+      </Button>
       <h2>{hasChosed.name}</h2>
       {hasChosed.message.map((row, index) => (
         <p key={index} className={`${row.style || "near"} message`}>
@@ -48,13 +54,14 @@ const Invite = ({ history, chosed }) => {
         </p>
       ))}
       {hasChosed.hasAccepted === null && (
-        <div className="response">
+        <div className="response no-print">
           <Button onClick={() => sendResponse(true)}>
             Eu aceito!!{" "}
             <span role="img" aria-label="hidden">
               ❤️❤️
             </span>
           </Button>
+
           <p
             style={{ color: "#26a69a" }}
             role="button"
@@ -65,7 +72,7 @@ const Invite = ({ history, chosed }) => {
         </div>
       )}
       {hasChosed.hasAccepted && (
-        <div className="celebrate">
+        <div className="celebrate no-print">
           <img
             alt="Fogos de artificio para comemorar!!!"
             style={{ maxWidth: "476px" }}
@@ -76,6 +83,7 @@ const Invite = ({ history, chosed }) => {
       )}
       {hasChosed.hasAccepted === false && (
         <h6
+          className="no-print"
           style={{ fontFamily: "Roboto", color: "#26a69a" }}
           role="button"
           onClick={() => reset()}

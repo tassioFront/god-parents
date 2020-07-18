@@ -94,6 +94,18 @@ select {
   padding-bottom: 30px;
 }
 
+@media print {
+  .main {
+    padding-top: 40px;
+  }
+}
+
 strong {
   font-weight: bold;
+}
+
+@media print {
+  .no-print {
+    display: none;
+  }
 }

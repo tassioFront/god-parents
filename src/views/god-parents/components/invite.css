@@ -43,6 +43,19 @@
   margin-bottom: 10px;
 }
 
+.btn-floating--custom {
+  position: fixed;
+  bottom: 40px;
+  right: 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .btn-floating--custom {
+    bottom: 35px;
+    right: 35px;
+  }
+}
+
 /* text variants */
 .contrast {
   margin-top: 20px;

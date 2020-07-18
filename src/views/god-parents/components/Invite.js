@@ -5,39 +5,37 @@ import { Button } from "react-materialize";
 import "./invite.css";
 import "./popup.css";
 import storage from "../../../helpers/localStorage";
+import scroll from "../../../helpers/scroll";
 import { update } from "../../../services/godParents.service";
+
+const userExp = (selector) => {
+  //just to UX perception time
+  setTimeout(() => {
+    scroll.toId(selector);
+  }, 100);
+};
 
 const Invite = ({ history, chosed }) => {
   const [{ hasChosed }, setState] = useState({
     hasChosed: storage.get("gp") || chosed,
   });
+  useEffect(() => {
+    setState({ hasChosed: storage.get("gp") || chosed });
+    userExp("#invited");
+  }, []);
 
-  const toTitle = () => {
-    const invited = document.querySelector("#invited");
-    invited &&
-      invited.scrollIntoView({
-        behavior: "smooth",
-      });
-  };
   const sendResponse = async (value) => {
     hasChosed.hasAccepted = value;
     await update({ data: hasChosed, id: hasChosed.id });
     setState({ hasChosed: { ...hasChosed } });
     storage.set("gp", hasChosed);
+    hasChosed.hasAccepted && userExp("#accepted");
   };
   const reset = () => {
     hasChosed.hasAccepted = null;
     setState({ hasChosed: { ...hasChosed } });
     storage.set("gp", hasChosed);
   };
-
-  useEffect(() => {
-    setState({ hasChosed: storage.get("gp") || chosed });
-
-    setTimeout(() => {
-      toTitle();
-    }, 100);
-  }, []);
 
   return (
     <div id="invited" className="invite">
@@ -47,12 +45,15 @@ const Invite = ({ history, chosed }) => {
       >
         <i className="material-icons">print</i>
       </Button>
+
       <h2>{hasChosed.name}</h2>
+
       {hasChosed.message.map((row, index) => (
         <p key={index} className={`${row.style || "near"} message`}>
           {row.text}
         </p>
       ))}
+
       {hasChosed.hasAccepted === null && (
         <div className="response no-print">
           <Button onClick={() => sendResponse(true)}>
@@ -71,8 +72,9 @@ const Invite = ({ history, chosed }) => {
           </p>
         </div>
       )}
+
       {hasChosed.hasAccepted && (
-        <div className="celebrate no-print">
+        <div id="accepted" className="celebrate no-print">
           <img
             alt="Fogos de artificio para comemorar!!!"
             style={{ maxWidth: "476px" }}
@@ -81,6 +83,7 @@ const Invite = ({ history, chosed }) => {
           <h4>Obrigado por aceitaar !!!!</h4>
         </div>
       )}
+
       {hasChosed.hasAccepted === false && (
         <h6
           className="no-print"

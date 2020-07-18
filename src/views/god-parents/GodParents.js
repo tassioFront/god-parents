@@ -8,9 +8,9 @@ import Loading from "../../components/loading/loading.js";
 
 import "./god-parents.css";
 import { get } from "../../services/godParents.service";
-// import PopupPassword from "./components/Popup-password.js";
 
-// import { messages } from "./mockMessage";
+// are you studing on it? use that mock data ;)
+import { messages } from "./mockMessage";
 
 // const data = {
 //   color: "purple darken-1",
@@ -26,11 +26,17 @@ import { get } from "../../services/godParents.service";
 
 const GodParents = () => {
   const [GodParentsOptions, setData] = useState([]);
+  let hasError;
   useEffect(() => {
     get().then((result) => {
+      hasError = result.error;
       setData(result);
     });
-    // setData(messages);
+
+    // are you studing on it? mocking data for you ;)
+    process.env.NODE_ENV === "development" &&
+      !GodParentsOptions &&
+      setData(messages);
   }, []);
 
   const [{ chosed }, setState] = useState({
@@ -76,12 +82,6 @@ const GodParents = () => {
         )}
       </div>
       {chosed && (
-        // <PopupPassword
-        //   key={"pass"}
-        //   chosed={chosed}
-        //   handle={handled}
-        //   validatePass={validatePass}
-        // />
         <Popup
           key={"pass"}
           chosed={chosed}

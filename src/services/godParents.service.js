@@ -10,12 +10,12 @@ export const get = async () => {
   let data = [];
 
   try {
-    const response = await FirebaseApp.db.collection(resource).get();
+    const response = await FirebaseApp.db.collection(null).get();
     response.forEach((res) => {
       data.push({ id: res.id, ...res.data() });
     });
   } catch (err) {
-    temporaryErrorHandling();
+    return { error: err };
   }
   return data;
 };

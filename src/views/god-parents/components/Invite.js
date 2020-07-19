@@ -48,11 +48,18 @@ const Invite = ({ history, chosed }) => {
 
       <h2>{hasChosed.name}</h2>
 
-      {hasChosed.message.map((row, index) => (
-        <p key={index} className={`${row.style || "near"} message`}>
-          {row.text}
+      {!hasChosed.message ? (
+        <p>
+          Nos desculpe, ocorreu um erro algo carregar a mensagem. Poderia tentar
+          novamente?
         </p>
-      ))}
+      ) : (
+        hasChosed.message.map((row, index) => (
+          <p key={index} className={`${row.style || "near"} message`}>
+            {row.text}
+          </p>
+        ))
+      )}
 
       {hasChosed.hasAccepted === null && (
         <div className="response no-print">

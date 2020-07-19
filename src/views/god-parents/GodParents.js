@@ -26,22 +26,32 @@ import { messages } from "./mockMessage";
 
 const GodParents = () => {
   const [GodParentsOptions, setData] = useState([]);
-  let hasError;
-  useEffect(() => {
-    get().then((result) => {
-      hasError = result.error;
-      setData(result);
-    });
+  const [{ chosed }, setState] = useState({
+    chosed: null,
+  });
+  const [hasError, setError] = useState(null);
+  const [isLoading, setLoad] = useState(true);
+
+  const fetch = () => {
+    setLoad(true);
+
+    get()
+      .then((result) => {
+        !result.error ? setData(result) : setError({ error: result.error });
+      })
+      .finally(() => {
+        setLoad(false);
+      });
 
     // are you studing on it? mocking data for you ;)
     process.env.NODE_ENV === "development" &&
       !GodParentsOptions &&
       setData(messages);
-  }, []);
+  };
 
-  const [{ chosed }, setState] = useState({
-    chosed: null,
-  });
+  useEffect(() => {
+    fetch();
+  }, []);
 
   const validatePass = (inputed, pass) => {
     return inputed === pass || inputed === process.env.REACT_APP_JOKE_PASSWORD;
@@ -75,10 +85,22 @@ const GodParents = () => {
           escolha a opção (nos botões a seguir) que faça mais sentido haha
         </p>
 
-        {!GodParentsOptions.length ? (
+        {isLoading ? (
           <Loading />
         ) : (
-          <Options handle={handled} optionsArray={GodParentsOptions} />
+          !hasError &&
+          GodParentsOptions.length && (
+            <Options handle={handled} optionsArray={GodParentsOptions} />
+          )
+        )}
+        {hasError && (
+          <p className="error orange-text">
+            Desculpe, algum error ocorreur :/{" "}
+            <span className="red-text darken-2" onClick={fetch} role="button">
+              Clique caso queira tentar novamente agora{" "}
+            </span>
+            ou tente novamente mais tarde.
+          </p>
         )}
       </div>
       {chosed && (

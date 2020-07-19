@@ -10,7 +10,7 @@ export const get = async () => {
   let data = [];
 
   try {
-    const response = await FirebaseApp.db.collection(null).get();
+    const response = await FirebaseApp.db.collection(resource).get();
     response.forEach((res) => {
       data.push({ id: res.id, ...res.data() });
     });

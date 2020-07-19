@@ -64,18 +64,21 @@ const Invite = ({ history, chosed }) => {
       {hasChosed.hasAccepted === null && (
         <div className="response no-print">
           <Button onClick={() => sendResponse(true)}>
-            Eu aceito!!{" "}
+            {hasChosed.isDouble ? "Nós aceitamos!! " : "Eu aceito!! "}
             <span role="img" aria-label="hidden">
               ❤️❤️
             </span>
           </Button>
 
           <p
+            className="pointer"
             style={{ color: "#26a69a" }}
             role="button"
             onClick={() => sendResponse(false)}
           >
-            Desculpe pessoal, não posso :/
+            {`Desculpe pessoal,  ${
+              hasChosed.isDouble ? "não podemos :/" : "não posso :/"
+            }`}
           </p>
         </div>
       )}
@@ -98,7 +101,8 @@ const Invite = ({ history, chosed }) => {
           role="button"
           onClick={() => reset()}
         >
-          Clique aqui, caso queira <strong>responder novamente :)</strong>
+          Clique aqui, caso queira{" "}
+          <strong className="pointer">responder novamente :)</strong>
         </h6>
       )}
     </div>

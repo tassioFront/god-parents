@@ -1,5 +1,4 @@
 import FirebaseApp from "../firebaseApp";
-
 const resource = process.env.REACT_APP_GOD_PARANTS;
 
 const temporaryErrorHandling = () => {

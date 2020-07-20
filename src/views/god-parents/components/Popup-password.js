@@ -21,39 +21,28 @@ const PopupPassword = ({ chosed, validatePass, handle, history }) => {
   };
 
   const context = chosed.isDouble ? "vocês, " : "você, ";
-  const component = () => {
-    return (
-      <React.Fragment>
-        <p>
-          {"Fizemos uma coisinha especialmente pra " +
-            context +
-            chosed.name +
-            " ❤️ Só digite a senha e lhe mostramos hehe"}
-        </p>
-        {/* input losing focus after stateChange */}
-        <Input
-          onChange={inputing}
-          label="Senha marota"
-          s={12}
-          defaultValue={pass || ""}
-        />
-        <Button
-          onClick={goToInvite}
-          disabled={!(pass && validatePass(pass, chosed.myPass))}
-          waves="light"
-        >
-          Me mostra logo!!!
-        </Button>
-      </React.Fragment>
-    );
-  };
-
   return (
-    <Popup
-      key={"popup"}
-      handle={() => handle(chosed, clean)}
-      Component={component}
-    />
+    <Popup key={"popup"} handle={() => handle(chosed, clean)}>
+      <p>
+        {"Fizemos uma coisinha especialmente pra " +
+          context +
+          chosed.name +
+          " ❤️ Só digite a senha e lhe mostramos hehe"}
+      </p>
+      <Input
+        onChange={inputing}
+        label="Senha marota"
+        s={12}
+        defaultValue={pass || ""}
+      />
+      <Button
+        onClick={goToInvite}
+        disabled={!(pass && validatePass(pass, chosed.myPass))}
+        waves="light"
+      >
+        Me mostra logo!!!
+      </Button>
+    </Popup>
   );
 };
 export default withRouter(PopupPassword);

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Switch, Route } from "react-router-dom";
 
-import Popup from "./components/old__Popup.js";
+import Popup from "./components/Popup-password.js";
 import Options from "./components/Options";
 import Invite from "./components/Invite";
 import Loading from "../../components/loading/loading.js";
@@ -11,18 +11,6 @@ import { get } from "../../services/godParents.service";
 
 // are you studing on it? use that mock data ;)
 import { messages } from "./mockMessage";
-
-// const data = {
-//   color: "purple darken-1",
-//   isDouble: true,
-//   name: "Lucas e Amandinha",
-//   position: "2",
-//   message: [
-//     {
-//       text:
-//     }
-//   ],
-// };
 
 const GodParents = () => {
   const [GodParentsOptions, setData] = useState([]);

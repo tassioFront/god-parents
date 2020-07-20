@@ -1,5 +1,4 @@
-import React, { useState, Component } from "react";
-import { withRouter } from "react-router-dom";
+import React from "react";
 
 import "./popup.css";
 
@@ -12,7 +11,7 @@ const Popup = (props) => {
         style={{ maxWidth: "300px" }}
         onClick={(event) => event.stopPropagation()}
       >
-        <props.Component key={"component"} />
+        {props.children}
       </div>
     </div>
   );

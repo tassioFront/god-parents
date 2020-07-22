@@ -18,5 +18,5 @@ it will run with mock data.
 * `npm i && npm start`
 * access at http://localhost:3000/invite
 
-##Pay Attetion
+## Pay Attetion
 You will notice that there are .env.example file, which is an example of .env file used at real would to save secret keys.

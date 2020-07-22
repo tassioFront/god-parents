@@ -25,16 +25,15 @@ const GodParents = () => {
 
     get()
       .then((result) => {
-        !result.error ? setData(result) : setError({ error: result.error });
+        process.env.NODE_ENV === "development"
+          ? setData(messages) // are you studing on it? mocking data for you ;)
+          : !result.error
+          ? setData(result)
+          : setError({ error: result.error });
       })
       .finally(() => {
         setLoad(false);
       });
-
-    // are you studing on it? mocking data for you ;)
-    process.env.NODE_ENV === "development" &&
-      !GodParentsOptions &&
-      setData(messages);
   };
 
   useEffect(() => {
